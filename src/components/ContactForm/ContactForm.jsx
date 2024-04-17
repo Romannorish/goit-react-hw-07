@@ -2,7 +2,7 @@ import css from "./ContactForm.module.css"
 import {ErrorMessage, Field, Form, Formik} from "formik"
 import * as Yup from "yup"
 import {useDispatch} from "react-redux"
-import {addContacts} from "../../redux/contactsOps"
+import {addContact} from "../../redux/contactsOps"
 
 export default function ContactForm() {
   const dispatch = useDispatch()
@@ -11,7 +11,7 @@ export default function ContactForm() {
     number: "",
   }
   const hundleSubmit = (data, formActions) => {
-    dispatch(addContacts(data))
+    dispatch(addContact(data))
     formActions.resetForm()
   }
 
